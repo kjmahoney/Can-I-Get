@@ -2,27 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Word from './Word';
-import getRandomWord from './getRandomWord';
+import getWord from './getRandomWord';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      word: "pineapple"
+      word: ""
     }
   }
 
   componentDidMount() {
-
+    getWord().then((res) => {
+      this.setState({
+        word: res
+      })
+    })
   }
 
   render() {
-    console.log('cheesin');
     return(
       <div>
         <h1>All we need to get started</h1>
-        <Word word="pineapple"></Word>
+        <Word word={this.state.word}></Word>
       </div>
     )
   }
