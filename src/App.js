@@ -1,38 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
+import Header from './Header';
 import Word from './Word';
 import getWord from './getRandomWord';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+const App = () => {
+  const [ word, setWord ] = useState('');
 
-    this.state = {
-      word: ""
-    }
-    this.handleGetClick = this.handleGetClick.bind(this);
-  }
-
-  handleGetClick() {
+  function handleGetClick() {
     getWord().then((res) => {
-      this.setState({
-        word: res
-      })
+      setWord(res);
     })
   }
 
-  render() {
-    return(
-      <div>
-        <h1>All we need to get started</h1>
-        <button onClick={this.handleGetClick}>
-          Is a Word
-        </button>
-        <Word word={this.state.word}></Word>
-      </div>
-    )
-  }
+  return(
+    <div>
+      <Header />
+      <button onClick={handleGetClick}>
+        Is a Word
+      </button>
+      <Word word={word}></Word>
+    </div>
+  )
 }
 
 ReactDOM.render(React.createElement(App), document.getElementById('root'));
