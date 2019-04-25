@@ -1,10 +1,12 @@
 import React from 'react';
-import './Header.css';
+import styles from './Header.module.css';
+
+console.log(styles)
 
 const Header = () => {
   return (
     <>
-      <h1 className="bighead">All we need to get started</h1>
+      <h1 className={styles.title}>Heres the title</h1>
     </>
   )
 }
