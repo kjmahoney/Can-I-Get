@@ -5,6 +5,8 @@ import Header from './Header';
 import Word from './Word';
 import getWord from './getRandomWord';
 
+import styles from './App.module.scss';
+
 const App = () => {
   const [ word, setWord ] = useState('...');
 
@@ -16,7 +18,7 @@ const App = () => {
 
   return(
     <>
-    <div className=".container">
+    <div className={styles.container}>
       <Header />
       <button onClick={handleGetClick}>
         Is a Word
