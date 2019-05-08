@@ -4,7 +4,7 @@ import styles from './Header.module.scss';
 const Header = () => {
   return (
     <>
-      <h1 className={styles.title}>Heres the title</h1>
+      <h1 className={styles.title}>All we need to get started is a...</h1>
     </>
   )
 }

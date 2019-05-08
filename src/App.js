@@ -6,6 +6,7 @@ import Word from './Word';
 import getWord from './getRandomWord';
 
 import styles from './App.module.scss';
+import audienceImage from './audience.svg';
 
 const App = () => {
   const [ word, setWord ] = useState('...');
@@ -20,10 +21,11 @@ const App = () => {
     <>
     <div className={styles.container}>
       <Header />
-      <button onClick={handleGetClick}>
-        Is a Word
+      <button className={styles.button} onClick={handleGetClick}>
+        Word
       </button>
       <Word word={word}></Word>
+      <img className={styles.image} src={audienceImage}></img>
     </div>
     </>
   )
