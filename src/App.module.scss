@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: lightslategray;
@@ -10,5 +13,13 @@ body {
 }
 
 .image {
+    position: relative;
     width: 100vw;
+}
+
+.crowd {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }

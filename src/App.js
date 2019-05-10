@@ -24,8 +24,10 @@ const App = () => {
       <button className={styles.button} onClick={handleGetClick}>
         Word
       </button>
-      <Word word={word}></Word>
-      <img className={styles.image} src={audienceImage}></img>
+      <div className={styles.crowd}>
+        <img className={styles.image} src={audienceImage}></img>
+        <Word word={word}></Word>
+      </div>
     </div>
     </>
   )
