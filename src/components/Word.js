@@ -9,7 +9,6 @@ const Word = props => {
         <h2 className={styles.word}>{ props.word }</h2>
       </div>
     </div>
-    
   )
 }
 
