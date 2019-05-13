@@ -9,11 +9,13 @@ import styles from './App.module.scss';
 import audienceImage from './audience.svg';
 
 const App = () => {
-  const [ word, setWord ] = useState('...');
+  const [ word, setWord ] = useState('');
+  const [ showWord, setShowWord ] = useState(false);
 
   function handleGetClick() {
     getWord().then((res) => {
       setWord(res);
+      setShowWord(true);
     })
   }
 
@@ -26,7 +28,7 @@ const App = () => {
       </button>
       <div className={styles.crowd}>
         <img className={styles.image} src={audienceImage}></img>
-        <Word word={word}></Word>
+        { showWord ?  <Word word={word}></Word> : null }
       </div>
     </div>
     </>
