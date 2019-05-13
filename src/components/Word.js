@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Word.module.scss';
 
-
 const Word = props => {
   return (
     <div className={styles.container}>
