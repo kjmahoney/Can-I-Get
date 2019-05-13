@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Header from './components/Header';
 import Word from './components/Word';
+import Button from './components/Button';
 import getWord from './utils/getRandomWord';
 
 import styles from './App.module.scss';
@@ -12,7 +13,7 @@ const App = () => {
   const [ word, setWord ] = useState('');
   const [ showWord, setShowWord ] = useState(false);
 
-  function handleGetClick() {
+  function handleWordClick() {
     getWord().then((res) => {
       setWord(res);
       setShowWord(true);
@@ -23,9 +24,7 @@ const App = () => {
     <>
     <div className={styles.container}>
       <Header />
-      <button className={styles.button} onClick={handleGetClick}>
-        Word
-      </button>
+      <Button setFunction={handleWordClick} />
       <div className={styles.crowd}>
         <img className={styles.image} src={audienceImage}></img>
         { showWord ?  <Word word={word}></Word> : null }
