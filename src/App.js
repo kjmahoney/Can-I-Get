@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
-import Header from './Header';
-import Word from './Word';
-import getWord from './getRandomWord';
+import Header from './components/Header';
+import Word from './components/Word';
+import getWord from './utils/getRandomWord';
 
 import styles from './App.module.scss';
-import audienceImage from './audience.svg';
+import audienceImage from './images/audience.svg';
 
 const App = () => {
   const [ word, setWord ] = useState('');
